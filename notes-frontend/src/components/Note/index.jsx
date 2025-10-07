@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./index.css";
 
 export default function Note(props) {
@@ -16,6 +17,7 @@ export default function Note(props) {
   return (
     <div className="card">
       <h3 className="card-title">{title}</h3>
+      <Link to={`edit/${props.id}`}>✏️</Link>
       <div className="card-content">{children}</div>
 
       <button className="btn-delete" onClick={deleteNote}>
